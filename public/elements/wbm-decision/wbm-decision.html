@@ -1,0 +1,18 @@
+<link rel="import" href="../../bower_components/app-router/app-router.html">
+
+<polymer-element name="wbm-decision">
+	<template>
+		<template repeat="{{route in routes}}">
+			<li>
+				<a href="#!/aId/12345/{{route.path}}">{{route.path}}</a>
+			</li>
+		</template>
+		<app-router mode="auto">
+			<template repeat="{{route in routes}}">
+				<app-route path="/aId/:aId/{{route.path}}" import="/elements/{{route.import}}.html"></app-route>
+			</template>
+		</app-router>
+	</template>
+	<script type="text/javascript" src="wbm-decision.js">
+	</script>
+</polymer-element>

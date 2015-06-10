@@ -1,0 +1,20 @@
+{
+  "name": "polymer-wbm",
+  "version": "0.0.0",
+  "authors": [
+    "Huessi <Huess@juicyarts.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5",
+    "app-router": "~2.6.1",
+    "web-component-tester": "~3.1.7"
+  }
+}

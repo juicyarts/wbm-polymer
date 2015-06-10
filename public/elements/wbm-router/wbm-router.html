@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/app-router/app-router.html">
 
-<polymer-element name="wbm-decision">
+<polymer-element name="wbm-router">
 	<template>
 		<template repeat="{{route in routes}}">
 			<li>
@@ -11,8 +11,10 @@
 			<template repeat="{{route in routes}}">
 				<app-route path="/aId/:aId/{{route.path}}" import="/elements/{{route.import}}.html"></app-route>
 			</template>
+			<!-- Route Decision if no params or missmatched params were given -->
+			<app-route path="*" import="/elements/wbm-decision/wbm-decision.html">
 		</app-router>
 	</template>
-	<script type="text/javascript" src="wbm-decision.js">
+	<script type="text/javascript" src="wbm-router.js">
 	</script>
 </polymer-element>

@@ -18,7 +18,7 @@ Polymer({
 		import: 'wbm-tooltip/wbm-tooltip',
 		element: 'wbm-tooltip'
 	}],
-	rewriteValue: function() {
+	rewriteRoute: function() {
 		this.currentRoute = '';
 	}
 });

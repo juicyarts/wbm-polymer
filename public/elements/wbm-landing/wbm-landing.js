@@ -1,6 +1,6 @@
 (function(){
 	Polymer({
-		affiliateId: undefined,
+		is: 'wbm-landing',
 		ready: function(){
 			this.value = 'This is wbm landing';
 		}

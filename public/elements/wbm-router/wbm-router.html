@@ -10,7 +10,7 @@
 			</template>
 
 		</ul>
-		<app-router mode="auto">
+		<app-router mode="pushState">
 			<template is="dom-repeat" items="{{routes}}" as="route">
 				<app-route path$="{{computeRouterPath(route.prePath, route.path, route.postPath)}}" import$="{{computeRouterImport(route.import)}}"></app-route>
 			</template>

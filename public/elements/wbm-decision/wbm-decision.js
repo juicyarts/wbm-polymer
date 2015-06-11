@@ -46,28 +46,17 @@ Polymer({
 		if (loc.indexOf('#!/') >= 0) {
 			loc = loc.split('#!/')[1].split('/');
 		}
-		/**
-		 * urlMatcher
-		 * @param  {Array} newLoc){		} [takes given route params]
-		 * @return {Array}               [returns matching values]
-		 */
+
 		if (loc !== '') {
 			this.urlMatching(loc, function(newLoc) {
-				self.getDecisionParams(newLoc);
+				self.makeDecision(self.getDecisionParams(newLoc));
 			});
 		} else {
-			this.getDecisionParams();
+			this.makeDecision(this.getDecisionParams());
 		}
 	},
 	urlMatching: function(loc, cb) {
-		// hard code some Url Matchers that are known to the system
 		var newloc = {};
-
-		/**
-		 * For Each object in given Route Params Array
-		 * @param  {Number} var i iterate
-		 * @return {String} return matching string
-		 */
 		for (var i = 0; i < loc.length; i++) {
 			for (var j = 0; j < this.matchers.length; j++) {
 				if (this.matchers[j].type === 'regEx') {
@@ -91,18 +80,41 @@ Polymer({
 		};
 		cb(newloc);
 	},
-	makeDecision: function() {
-		// make decision depending on db-response
-	},
 	getDecisionParams: function(params) {
-		console.log(params);
 		// get params from db by affiliateId if given
 		// someFancyAjaxFunctionToGetDataFromTheDatabase
-		var ddResponse = {}
+		var dbResponse = {}
 		if (params) {
 			// get request with params
 		} else {
 			// get request without params
 		}
+
+		// fake db response
+		if (params) {
+			return dbResponse = {
+				type: params.type,
+				aId: params.aId,
+				variant: params.variant,
+				competition: 12,
+				team: 209,
+				locale: 'deDE'
+			};
+		} else {
+			return dbResponse = {
+				type: 'landing',
+				aId: 1337867,
+				variant: 'static',
+				co: 12,
+				te: 209,
+				locale: 'deDE'
+			};
+		}
+	},
+	makeDecision: function(params) {
+		console.log(params);
+		// make a url decision depending on given params
+		var url = params.aId + '/' + params.type + '/' + params.variant + '/?co=' + params.co + '&te=' + params.te;
+		window.location.hash = '#!/' + url;
 	}
 });

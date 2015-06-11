@@ -17,25 +17,25 @@ Polymer({
 			notify: true,
 			value: [{
 				"path": "landing",
-				"prePath": "/aId/:aId/",
-				"postPath": "/type/:type", // gws / dynamic / static / bonus
+				"prePath": "/:aId/",
+				"postPath": "/:type", // gws / dynamic / static / bonus
 				"import": "wbm-landing/wbm-landing",
 				"element": "wbm-landing"
 			}, {
 				"path": "banner",
-				"prePath": "/aId/:aId/",
-				"postPath": "/type/:type/format/:format/",
+				"prePath": "/:aId/",
+				"postPath": "/:type/:variant/",
 				"import": "wbm-banner/wbm-banner",
 				"element": "wbm-banner"
 			}, {
 				"path": "microsite",
-				"prePath": "/aId/:aId/",
+				"prePath": "/:aId/",
 				"postPath": "",
 				"import": "wbm-microsite/wbm-microsite",
 				"element": "wbm-microsite"
 			}, {
 				"path": "tooltip",
-				"prePath": "/aId/:aId/",
+				"prePath": "/:aId/",
 				"postPath": "",
 				"import": "wbm-tooltip/wbm-tooltip",
 				"element": "wbm-tooltip"
@@ -43,7 +43,7 @@ Polymer({
 		}
 	},
 	computeRoutePath: function(path){
-		return '#!/aId/12345/' + path;
+		return '#!/12345/' + path;
 	},
 	computeRouterPath:function(prepath, path, postpath){
 		return prepath + path + postpath;

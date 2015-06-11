@@ -1,6 +1,8 @@
 var wbmRouter = document.querySelector('wbm-router');
 
 suite('<wbm-Router>', function() {
+
+
 	test('element is available', function(done) {
 		assert.isNotNull(wbmRouter, 'wbmRouter is Null');
 		done();
@@ -18,11 +20,11 @@ suite('<wbm-Router>', function() {
 		done();
 	});
 	test('can compute Route Path for <li>', function(done) {
-		expect(wbmRouter.computeRoutePath('test')).to.equal('#!/aId/12345/test');
+		expect(wbmRouter.computeRoutePath('test')).to.equal('#!/12345/test');
 		done();
 	});
 	test('can compute Router Path for <app-router>', function(done) {
-		expect(wbmRouter.computeRouterPath('/aId/:aId/', 'landing', '/type/:type')).to.equal('/aId/:aId/landing/type/:type');
+		expect(wbmRouter.computeRouterPath('/:aId/', 'landing', '/:type')).to.equal('/:aId/landing/:type');
 		done();
 	});
 	test('can compute Router Imports for <app-router>', function(done) {
@@ -41,8 +43,8 @@ suite('<wbm-Router>', function() {
 
 			wbmRouter.currentRoute = {
 				"path": "banner",
-				"prePath": "/aId/:aId/",
-				"postPath": "/type/:type/format/:format/",
+				"prePath": "/:aId/",
+				"postPath": "/:type/:format/",
 				"import": "wbm-banner/wbm-banner",
 				"element": "wbm-banner"
 			};

@@ -5,17 +5,26 @@ suite('<wbm-decision>', function() {
 		assert.isNotNull(wbmDecision, 'wbmDecision is Null');
 		done();
 	});
-	test('knows the value', function(done) {
-		assert.equal(wbmDecision.value, 'someOtherValue');
+	test('has modName property', function(done) {
+		assert.equal(wbmDecision.modName, 'wbm-decision');
 		done();
 	});
-	test('has an array of routes', function(done) {
-		assert.isAbove(wbmDecision.routes.length, 0, 'routeLength is beneath 0');
+	test('has empty Path property', function(done) {
+		assert.equal(wbmDecision.path, '');
 		done();
 	});
-	test('can rewrite the Route', function(done) {
-		wbmDecision.rewriteRoute();
-		assert.equal(wbmDecision.currentRoute, '', 'rewrite Route failed');
+
+	test('has matchers Array', function(done) {
+		assert.isAbove(wbmDecision.matchers.length, 0, 'mathcers array is empty');
 		done();
 	});
+
+	test('should run analyseRouteParams fn', function(done) {
+		sinon.spy(wbmDecision, 'analyseRouteParams');
+
+		wbmDecision.ready();
+		expect(wbmDecision.analyseRouteParams.calledOnce).to.be.true;
+		done();
+	});
+
 });

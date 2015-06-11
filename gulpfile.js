@@ -37,7 +37,8 @@
 	// tested - running
 	gulp.task("lint", function() {
 		return gulp.src([
-				"./public/elements/**/*.js"
+				"./public/elements/**/*.js",
+				"./test/**/*.js"
 			])
 			.pipe(jshint({
 				lookup: true

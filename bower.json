@@ -13,7 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5",
+    "polymer": "Polymer/polymer#^1.0.0",
     "app-router": "~2.6.1"
   }
 }

@@ -114,8 +114,12 @@
 		},
 		makeDecision: function(params) {
 			// make a url decision depending on given params
-			var url = '/' + params.aId + '/' + params.type + '/' + params.variant + '?co=' + params.co + '&te=' + params.te;
+			var url = '/' + params.aId + '/' + params.type + '/' + params.variant ; // + '?co=' + params.co + '&te=' + params.te
 			window.location.hash = url;
+			console.log('ant were goin to sf');
+			window.setTimeout(function(){
+				document.getElementById('wbm-main-router').go(url, {replace: true});
+			});
 		}
 	});
 })();

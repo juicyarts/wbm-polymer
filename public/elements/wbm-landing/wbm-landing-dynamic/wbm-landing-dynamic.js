@@ -1,14 +1,14 @@
 (function(){
 	Polymer({
-		is: 'wbm-landing-static',
+		is: 'wbm-landing-dynamic',
 		properties: {
 			name: {
 				type: String,
-				value: 'Static Version'
+				value: 'dynamic Version'
 			}
 		},
 		ready: function(){
-			console.log('wbm-landing-static is ready');
+			console.log('wbm-landing-dynamic is ready');
 			// this.name = this.name;
 		}
 	})

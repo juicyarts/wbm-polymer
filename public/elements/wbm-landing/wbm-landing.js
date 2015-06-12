@@ -29,15 +29,20 @@
 		},
 		ready: function() {
 			this.value = 'This is wbm landing';
-			console.log('landing router, ', this.$.wbmLandingRouter);
-			this.$.wbmLandingRouter.init();
-			console.log('landing router, ', this.$.wbmLandingRouter);
+			var self = this;
+			window.setTimeout(function(){
+				self.$.wbmLandingRouter.init();
+			});
 		},
 		computeRouterPath: function(prepath, path) {
 			return prepath + path ;
 		},
 		computeRouterImport: function(importPath) {
 			return 'elements/' + importPath + '.html';
+		},
+		redirectPath: function(){
+			return this.aId + '/landing/static';
 		}
+
 	})
 })();

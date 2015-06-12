@@ -24,7 +24,7 @@
 				}, {
 					"path": "banner",
 					"prePath": "/:aId/",
-					"postPath": "/:type/**",
+					"postPath": "/**",
 					"import": "wbm-banner/wbm-banner",
 					"element": "wbm-banner"
 				}, {
@@ -44,7 +44,9 @@
 		},
 		ready: function() {
 			window.addEventListener('WebComponentsReady', function() {
-				document.getElementById('wbm-main-router').init();
+				window.setTimeout(function(){
+					document.getElementById('wbm-main-router').init();
+				}, 100)
 			});
 		},
 		computeRoutePath: function(path) {
@@ -59,6 +61,6 @@
 		routeChanged: function(newVal, oldVal) {},
 		rewriteRoute: function() {
 			this.currentRoute = '';
-		}
+		}	
 	});
 })();

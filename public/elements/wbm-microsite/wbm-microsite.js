@@ -1,6 +1,6 @@
 (function(){
 	Polymer({
-		affiliateId: undefined,
+		is: 'wbm-microsite',
 		ready: function(){
 			this.value = 'This is wbm microsite';
 		}

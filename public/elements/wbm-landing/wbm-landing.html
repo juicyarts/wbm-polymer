@@ -1,6 +1,16 @@
-<dom-module id="wbm-landing" attirbutes="aId type co te">
+<dom-module id="wbm-landing" attributes="aId type co te">
 	<template>
 		<h1>{{value}}</h1>
+		<h2>{{aId}}</h2>
+		<h3>{{co}}</h3>
+		<h3>{{te}}</h3>
+		<app-router id="wbmLandingRouter" init="manual" mode='auto'>
+			<template is="dom-repeat" items="{{routes}}" as="route">
+
+				<app-route path$="{{computeRouterPath(route.prePath, route.path)}}" import$="{{computeRouterImport(route.import)}}">
+				</app-route>
+			</template>
+		</app-router>
 	</template>
 </dom-module>
 <script type="text/javascript" src="wbm-landing.js"></script>

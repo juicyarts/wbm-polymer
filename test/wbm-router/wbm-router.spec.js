@@ -1,8 +1,6 @@
 var wbmRouter = document.querySelector('wbm-router');
 
 suite('<wbm-Router>', function() {
-
-
 	test('element is available', function(done) {
 		assert.isNotNull(wbmRouter, 'wbmRouter is Null');
 		done();

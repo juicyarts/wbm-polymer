@@ -10,12 +10,12 @@
 			</template>
 
 		</ul>
-		<app-router mode="pushState">
+		<app-router id="wbm-main-router" init="manual">
 			<template is="dom-repeat" items="{{routes}}" as="route">
 				<app-route path$="{{computeRouterPath(route.prePath, route.path, route.postPath)}}" import$="{{computeRouterImport(route.import)}}"></app-route>
 			</template>
 			<!-- Route Decision if no params or missmatched params were given -->
-			<app-route path="*" import="/elements/wbm-decision/wbm-decision.html">
+			<app-route path="/*" import="/elements/wbm-decision/wbm-decision.html"></app-route>
 		</app-router>
 	</template>
 </dom-module>

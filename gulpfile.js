@@ -38,6 +38,7 @@
 	gulp.task("lint", function() {
 		return gulp.src([
 				"./public/elements/**/*.js",
+				"./public/elements/**/**/*.js",
 				"./test/**/*.js"
 			])
 			.pipe(jshint({
@@ -56,6 +57,7 @@
 			"./public/**",
 			"./public/**/**",
 			"./public/**/**/**",
+			"./public/**/**/**/**",
 		], ['lint']).on("change", function(event) {
 			browSync.reload();
 		}).on("create", function(event) {

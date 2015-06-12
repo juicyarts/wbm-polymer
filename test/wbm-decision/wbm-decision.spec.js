@@ -24,7 +24,7 @@ suite('<wbm-decision>', function() {
 	test('should run analyseRouteParams fn', function(done) {
 		sinon.spy(wbmDecision, 'analyseRouteParams');
 
-		wbmDecision.ready();
+		// wbmDecision.ready();
 		expect(wbmDecision.analyseRouteParams.calledOnce).to.be.true;
 		done();
 	});
@@ -33,14 +33,14 @@ suite('<wbm-decision>', function() {
 	suite('analyseRouteParams fn', function() {
 		test('should run getDecisionParams directly if no path parameters are given', function(done) {
 			sinon.spy(wbmDecision, 'getDecisionParams');
-			wbmDecision.ready();
+			// wbmDecision.ready();
 			expect(wbmDecision.getDecisionParams.calledOnce).to.be.true;
 			done();
 		});
 		test('should run urlMatching if path paramters are given', function(done) {
 			window.location.hash = 'aId/12345/landing';
 			sinon.spy(wbmDecision, 'urlMatching');
-			wbmDecision.ready();
+			// wbmDecision.ready();
 			expect(wbmDecision.urlMatching.calledOnce).to.be.true;
 			done();
 		});

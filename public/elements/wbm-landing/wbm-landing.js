@@ -40,8 +40,8 @@
 		computeRouterImport: function(importPath) {
 			return 'elements/' + importPath + '.html';
 		},
-		redirectPath: function(){
-			return this.aId + '/landing/static';
+		redirectPath: function(aid){
+			return '/' + aid + '/landing/static';
 		}
 
 	})

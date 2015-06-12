@@ -8,8 +8,6 @@
 			}
 		},
 		ready: function(){
-			console.log('wbm-landing-static is ready');
-			// this.name = this.name;
 		}
 	})
 })();

@@ -1,8 +1,14 @@
-
-<dom-module id="wbm-banner" attributes="aId route">
+<dom-module id="wbm-banner">
 	<template>
 		<h1>{{value}}</h1>
 		<h2>aff: <span>{{aId}}<span></h2>
+		<app-router id="wbmBannerRouter" init="manual" mode="auto">
+			<template is="dom-repeat" items="{{routes}}" as="route">
+				<app-route path$="{{computeRouterPath(route.prePath, route.path)}}" import$="{{computeRouterImport(route.import)}}">
+				</app-route>
+			</template>
+			<app-route path="/:aId/banner/*" redirect$="{{redirectPath(aId)}}"></app-route>
+		</app-router>
 	</template>
 </dom-module>
 <script type="text/javascript" src="wbm-banner.js"></script>

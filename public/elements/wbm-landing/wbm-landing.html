@@ -1,4 +1,4 @@
-<dom-module id="wbm-landing">
+<dom-module id="wbm-landing" attributes="aId">
 	<template>
 		<h1>{{value}}</h1>
 		<h2>aff: <span>{{aId}}<span></h2>
@@ -7,7 +7,7 @@
 				<app-route path$="{{computeRouterPath(route.prePath, route.path)}}" import$="{{computeRouterImport(route.import)}}">
 				</app-route>
 			</template>
-			<app-route path="/:aId/landing/*" redirect$="{{redirectPath()}}"></app-route>
+			<app-route path="/:aId/landing/*" redirect$="{{redirectPath(aId)}}"></app-route>
 		</app-router>
 	</template>
 </dom-module>

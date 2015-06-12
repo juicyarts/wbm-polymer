@@ -50,7 +50,7 @@
 			});
 		},
 		computeRoutePath: function(path) {
-			return '#!/12345/' + path;
+			return '#/12345/' + path + '/';
 		},
 		computeRouterPath: function(prepath, path, postpath) {
 			return prepath + path + postpath;

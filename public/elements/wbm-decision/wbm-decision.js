@@ -114,12 +114,11 @@
 		},
 		makeDecision: function(params) {
 			// make a url decision depending on given params
-			var url = '/' + params.aId + '/' + params.type + '/' + params.variant ; // + '?co=' + params.co + '&te=' + params.te
-			window.location.hash = url;
-			console.log('ant were goin to sf');
-			window.setTimeout(function(){
-				document.getElementById('wbm-main-router').go(url, {replace: true});
-			});
+			var url = '/' + params.aId + '/' + params.type + '/' + params.variant; // + '?co=' + params.co + '&te=' + params.te
+			window.setTimeout(function() {
+				window.location.hash = url;
+				// 	document.getElementById('wbm-main-router').go(url);
+			}, 200);
 		}
 	});
 })();

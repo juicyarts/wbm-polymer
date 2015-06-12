@@ -1,5 +1,4 @@
 (function() {
-
 	Polymer({
 		is: 'wbm-decision',
 		properties: {
